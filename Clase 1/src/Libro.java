@@ -62,9 +62,6 @@ public class Libro {
     }
     
     public void mostrarMuchasPags() {
-        if(cantPaginas > 500)
-            System.out.println(cantPaginas);
-        else 
-            System.out.println("Coño eto e muy pequeño");
+        System.out.println(cantPaginas > 500 ? cantPaginas : "Coño eto e muy pequeño");
     }
 }
