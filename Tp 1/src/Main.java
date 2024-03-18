@@ -1,23 +1,29 @@
 import java.util.Scanner;
+import java.lang.Math;
 public class Main {
     public static void main(String[] args){
-      /*
-      int[]numeros = new int[5];
-      numeros[0] = 1;
-      numeros[1] = 2;
-      cargarArreglo(numeros);
-      mostrarArreglo(numeros);
-      float prom = promediarArreglo(numeros);
-      System.out.println("\n" + prom);
-      */
-      //System.out.println(sumarNaturales(6));
-      // System.out.println("Ingresaste " + contarPosiivos() + " positivos");
-      // encontrarAscii();
 
-      int[] a = {1,2,6};
-      int[] b = {1,2,7};
-        System.out.println(contarRepetidos(a,b));
-        saludar();
+        // int[]numeros = new int[5];
+        // numeros[0] = 1;
+        // numeros[1] = 2;
+        // cargarArreglo(numeros);
+        // mostrarArreglo(numeros);
+        // float prom = promediarArreglo(numeros);
+        // System.out.println("\n" + prom);
+        
+
+        // System.out.println(sumarNaturales(6));
+        // System.out.println("Ingresaste " + contarPosiivos() + " positivos");
+        // encontrarAscii();
+
+        // int[] a = {1,2,6};
+        // int[] b = {1,2,7};
+        // System.out.println(contarRepetidos(a,b));
+        // saludar();
+
+        // calcularAreaYPerimetro();
+        
+
     }
     // Punto 1
     public static float promediarArreglo(int[] numeros){
@@ -74,7 +80,7 @@ public class Main {
         System.out.print("Ingrese un caracter: ");
         char caracter = sc.next().charAt(0);
         System.out.println("El ascii es " + (int)caracter);
-
+        sc.close();
     }
     // Punto 6
     public static int contarRepetidos(int[] a, int[] b){
@@ -87,11 +93,18 @@ public class Main {
         }
         return cont;
     }
-    //Punto 8
-    public static void saludar(){
+    //Punto 8  
+    public static void saludar(){  
         Scanner sc = new Scanner(System.in);
         System.out.print("Ingrese su nombre: ");
         System.out.println("Buen dia " + sc.next());
+        sc.close();
+    }
+    //Punto 9
+    public static void calcularAreaYPerimetro(){
+        Scanner sc = new Scanner(System.in);
+        int radio = sc.nextInt();
+        System.out.println("El area es " + (Math.PI * Math.sqrt(radio)) + "\nEl perímetro es " + (2 * Math.PI * radio));
         sc.close();
     }
 }
