@@ -217,51 +217,76 @@ public class Main {
         sc.close();
     }
 
-    //Punto 13
-
-    public static void calcularSalario(){
+    //punto 13
+    public static void mostrarSalario() {
         Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Ingrese su edad: ");
+        System.out.println("Ingrese su nombre");
+        String nombre = sc.next();
+        System.out.println("Ingrese su Edad");
         int edad = sc.nextInt();
-
-        sc.nextLine(); //Limpia el buffer luego de escanear un int
-
-        System.out.print("Ingrese su nombre: ");
-        String nombre = sc.nextLine();
-
-        System.out.print("Ingrese su salario: ");
+        System.out.println("Ingrese su salario");
         int salario = sc.nextInt();
-        sc.close();
 
-        if(edad > 60) System.out.println(nombre + ", su salario es de " + (salario*1.15));
-        else if(edad > 50) System.out.println(nombre + ", su salario es de " + (salario*1.1));
-        else if(edad > 19) System.out.println(nombre + ", su salario es de " + (salario*1.05));
-        else if(edad < 16) System.out.println(nombre + ", usted no tiene edad para trabajar");
-        else System.out.println(nombre + ", su salario es de " + salario);      
+        if (edad > 60) System.out.println(nombre + ", su salario es de " + (salario * 1.15));
+        else if (edad > 50) System.out.println(nombre + ", su salario es de " + (salario * 1.1));
+        else if (edad > 19) System.out.println(nombre + ", su salario es de " + (salario * 1.05));
+        else if (edad < 16) System.out.println(nombre + ", usted no tiene edad para trabajar");
+        else System.out.println(nombre + ", su salario es de " + salario);
+        sc.close();
     }
 
-    //Punto 14
+    ///punto 14
 
-    public static void saludoPersonalizado(){
+    public static void saludoPersonalizado() {
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Ingrese su nombre: ");
+        System.out.println("Ingrese su nombre completo: ");
         String nombre = sc.nextLine();
-        
-        System.out.print("Ingrese su edad: ");
+        System.out.println("Ingrese su edad: ");
         int edad = sc.nextInt();
-
+        System.out.println(edad > 17 ? "Bienvenido " + nombre + "a Banco SuperVielle" : "No cuenta con los requisitos para ingresar al banco");
         sc.close();
-        System.out.println("Adivinando...");
+    }
 
-        //Para hacer sleep
-        // try{
-        //     Thread.sleep(5000);
-        // } catch (Exception e){
-        //     System.out.println(e);
-        // }
+    /// 15
+    public static int mostrarVenta() {
+    Scanner sc = new Scanner(System.in);
+    int continuar = 1, suma = 0, precio = 0, cant = 0;
+    while (continuar == 1){
+        System.out.println("Ingrese el precio de la prenda: ");
+        precio = sc.nextInt();
+        System.out.println("Ingresa la cantidad de prendas: ");
+        cant = sc.nextInt();
+        suma += (cant*precio);
+        System.out.println("Deseas seguir cargando ventas?(1 para continuar): ");
+        continuar = sc.nextInt();
+    }
+    sc.close();
+    return suma;
+    }
 
-        System.out.println("Luego de pensarlo, detecto que su nombre es " + nombre + ", y su edad es " + edad);
+    ///punto 16
+    public static void mostrarEstadisticas(){
+        Scanner sc = new Scanner(System.in);
+        int cantH = 0, cantM = 0, edadTotal=0;
+        int continuar = 1, i = 0;
+        while (continuar == 1) {
+            sc.nextLine();
+            System.out.println("Ingrese su nombre: ");
+            String nombre = sc.next();
+            System.out.println("Ingrese su edad: ");
+            int edad = sc.nextInt();
+            sc.nextLine();
+            System.out.println("Ingrese su genero(m o f): ");
+            String genero = sc.next();
+            if(genero.equals("f"))cantM++;
+            else cantH++;
+            edadTotal += edad;
+            System.out.println("Deseas cargar otra persona?(Presione 1 para continuar): ");
+            continuar = sc.nextInt();
+            i++;
+        }
+        System.out.println("La edad promedio es " + (float)edadTotal / i);
+        System.out.println("Porcentaje de hombres " + (((float)cantH/i)*100) + "Porcentaje de mujeres " +(((float)cantM/i)*100));
+        sc.close();
     }
 }
