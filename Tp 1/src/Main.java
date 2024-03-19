@@ -293,11 +293,13 @@ public class Main {
 
     public static void contarGenero(){
         String nombre, genero;
+        String[] nombres = new String[5];
         int edad, suma = 0, cantHombres = 0, cantMujeres = 0;
         Scanner sc = new Scanner(System.in);
         for(int i = 0; i < 5; i++){
             System.out.print("Ingrese nombre: ");
             nombre = sc.nextLine();
+            nombres[i] = nombre;
             System.out.print("Ingrese genero: ");
             genero = sc.next();
 
@@ -314,6 +316,7 @@ public class Main {
         sc.close();
         double porMujeres = (double) cantMujeres/5 * 100;
         double porHombres = (double) cantHombres/5 * 100;
+        System.out.println("Los nombres son " + nombres[0] + nombres[1] + nombres[2] + nombres[3] + nombres[4] + nombres[5] );
         System.out.println("El promedio de edades es " + (double)suma/5);
         System.out.println("Hay " + porMujeres + "% de mujeres y " + porHombres + "% de hombres");
     }
@@ -337,6 +340,7 @@ public class Main {
             System.out.println("Ingrese la fecha de la tarea " + (i+1));
             fechas[i] = sc.nextLine();
         }
+        sc.close();
     }
 
 }
