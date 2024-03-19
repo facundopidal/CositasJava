@@ -31,7 +31,11 @@ public class Main {
 
         // calcularSalario();
 
-        saludoPersonalizado();
+        // saludoPersonalizado();
+
+        // sumarVenta();
+
+        contarGenero();
     }
     // Punto 1
     public static float promediarArreglo(int[] numeros){
@@ -51,8 +55,8 @@ public class Main {
     }
 
     public static void mostrarArreglo(int[] arregloX){
-        for(int i=0; i < arregloX.length;i++) {
-            System.out.print(arregloX[i] +"|");
+        for (int x : arregloX) {
+            System.out.print(x + "|");
         }
     }
     // Punto 2
@@ -264,4 +268,75 @@ public class Main {
 
         System.out.println("Luego de pensarlo, detecto que su nombre es " + nombre + ", y su edad es " + edad);
     }
+
+    // Punto 15
+
+    public static void sumarVenta(){
+        int compra, suma = 0, cant;
+        char opcion = 's';
+        Scanner sc = new Scanner(System.in);
+        while (opcion == 's'){
+            System.out.print("Ingrese el precio del producto: ");
+            compra = sc.nextInt();
+            System.out.print("Ingrese la cantidad del producto: ");
+            cant = sc.nextInt();
+            suma += compra * cant;
+            sc.next(); //Limpia el buffer
+            System.out.print("Ingrese s para continuar: ");
+            opcion = sc.next().charAt(0);
+        }
+        sc.close();
+        System.out.println("El total de la compra es " + suma);
+    }
+
+    //Punto 16
+
+    public static void contarGenero(){
+        String nombre, genero;
+        int edad, suma = 0, cantHombres = 0, cantMujeres = 0;
+        Scanner sc = new Scanner(System.in);
+        for(int i = 0; i < 5; i++){
+            System.out.print("Ingrese nombre: ");
+            nombre = sc.nextLine();
+            System.out.print("Ingrese genero: ");
+            genero = sc.next();
+
+            // Cuento la cantidad de hombres y mujeres
+            // tambien se podrian meter en un arreglo para contar despues
+            if (genero.equals("hombre")) cantHombres++;
+            else cantMujeres++;
+
+            System.out.print("Ingrese edad: ");
+            edad = sc.nextInt();
+            suma += edad;
+            sc.nextLine();
+        }
+        sc.close();
+        double porMujeres = (double) cantMujeres/5 * 100;
+        double porHombres = (double) cantHombres/5 * 100;
+        System.out.println("El promedio de edades es " + (double)suma/5);
+        System.out.println("Hay " + porMujeres + "% de mujeres y " + porHombres + "% de hombres");
+    }
+
+    //Punto 17
+
+    public static boolean esImportante(String tarea){
+        return tarea.contains("importante") | tarea.contains("critica") | tarea.contains("urgente");
+    }
+    public static void leerTareas(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese el numero de tareas: ");
+        int numTareas = sc.nextInt();
+
+        String[] tareas = new String[numTareas];
+        String[] fechas = new String[numTareas];
+
+        for (int i = 0; i < tareas.length; i++) {
+            System.out.println("Ingrese la tarea " + (i+1));
+            tareas[i] = sc.nextLine();
+            System.out.println("Ingrese la fecha de la tarea " + (i+1));
+            fechas[i] = sc.nextLine();
+        }
+    }
+
 }
