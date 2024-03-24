@@ -2,6 +2,7 @@ public class EmpleadoPorHoras extends Empleado{
 
     private static int cantHoras = 0;
     private float valorHora;
+    
     public EmpleadoPorHoras(String nombre, float valorHora) {
         super(nombre);
         this.valorHora = valorHora;
@@ -19,9 +20,16 @@ public class EmpleadoPorHoras extends Empleado{
         return valorHora;
     }
 
+    public static void setCantHoras(int cantHoras) {
+        EmpleadoPorHoras.cantHoras = cantHoras;
+    }
+
+    public void setValorHora(float valorHora) {
+        this.valorHora = valorHora;
+    }
+
     @Override
     public float calcularPago() {
-
         return cantHoras * valorHora;
     }
 }
