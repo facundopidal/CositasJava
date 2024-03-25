@@ -36,7 +36,7 @@ public class Cliente {
     public void mostrar(){
         System.out.println("ID: "+id);
         System.out.println("Nombre: "+nombre);
-        System.out.println((genero=='m')?"Genero: Masculino":"Genero Femenino");
+        System.out.println((genero == 'm') ? "Genero: Masculino" : "Genero Femenino");
     }
     
 }
