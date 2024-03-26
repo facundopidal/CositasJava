@@ -4,6 +4,5 @@ public class App {
         Libro lib1 = new Libro("Effective Java",450, 150, a1);
         lib1.aumentarStock(50);
         lib1.imprimirMensaje();
-        
     }
 }
