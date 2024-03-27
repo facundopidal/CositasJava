@@ -15,6 +15,7 @@ public class Hora{
         System.out.print(hora < 10 ? "0" + hora + ":" : hora + ":");
         System.out.print(minuto < 10 ? "0" + minuto + ":" : minuto + ":");
         System.out.print(segundo < 10 ? "0" + segundo : segundo);
+        System.out.println();
     }
 
     public int getHora() {
@@ -41,6 +42,31 @@ public class Hora{
         this.segundo = segundo;
     }
 
+    public Hora avanzarSegundo(){
+        segundo++;
+        if(segundo >= 60){
+            segundo = 0;
+            minuto++;
+            if (minuto >= 60) {
+                minuto = 0;
+                hora = (hora + 1) % 24;
+            }
+        }
+        return this;
+    }
+    
+    public Hora retrocederSegundo(){
+        segundo--;
+        if(segundo < 0){ 
+            segundo = 59;
+            minuto--;
+            if (minuto < 0) {
+                minuto = 59;
+                hora = (hora - 1) % 24;
+            }
+        }
+        return this;
+    }
 
     
 }
