@@ -16,18 +16,37 @@ public abstract class  Employee {
     ///Metodo dinamico
     public abstract void print();
 
-    public void maxSalary(Employee[] employees){
-        Employee aux = employees[0];
-        for(Employee employee : employees ){
-            if(employee.getSalary() > aux.getSalary())
-                aux = employee;
-        }
-        aux.print();
+    public int getDni() {
+        return dni;
     }
 
-    public void showAll(Employee[] employees){
-        for(Employee employee: employees){
-            employee.print();
-        }
+    public void setDni(int dni) {
+        this.dni = dni;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getEntryYear() {
+        return entryYear;
+    }
+
+    public void setEntryYear(int entryYear) {
+        this.entryYear = entryYear;
+    }
+
+    
 }

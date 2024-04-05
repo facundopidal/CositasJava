@@ -23,6 +23,7 @@ public class CommissionedEmployee extends Employee {
     }
     public void print(){
         System.out.println(getDescription());
+        System.out.println();
     }
 
     /// Descripcion del objeto

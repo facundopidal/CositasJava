@@ -5,7 +5,7 @@ public class FixedSalaryEmployee extends Employee{
     ///Constructor completo
     public FixedSalaryEmployee(int dni, String name, String lastName, int entryYear, int serviceYears, double initialSalary) {
         super(dni, name, lastName, entryYear);
-        serviceYears = serviceYears;
+        this.serviceYears = serviceYears;
         this.initialSalary = initialSalary;
     }
     // Constructor vacio
@@ -29,6 +29,7 @@ public class FixedSalaryEmployee extends Employee{
     @Override
     public void print(){
         System.out.println(getDescription());
+        System.out.println();
     }
 
     public String getDescription() {
