@@ -1,3 +1,4 @@
+package edificio;
 public abstract class Edificio {
     private double superficieEdificio;
 

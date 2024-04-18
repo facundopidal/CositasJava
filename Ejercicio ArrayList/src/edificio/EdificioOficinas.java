@@ -1,3 +1,4 @@
+package edificio;
 public class EdificioOficinas extends Edificio {
     private int cantOficinas;
 

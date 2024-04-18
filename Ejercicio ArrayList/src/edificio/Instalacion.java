@@ -1,3 +1,5 @@
+package edificio;
+
 public interface Instalacion {
 
     //??????s

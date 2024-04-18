@@ -1,3 +1,4 @@
+package edificio;
 public class Polideportivo extends Edificio implements Instalacion {
     private String nombre;
 

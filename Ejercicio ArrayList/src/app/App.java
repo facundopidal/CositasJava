@@ -1,5 +1,6 @@
+package app;
 import java.util.ArrayList;
-
+import edificio.*;
 public class App {
     public static void main(String[] args) {
         ArrayList <Edificio> edificios = new ArrayList<>();
