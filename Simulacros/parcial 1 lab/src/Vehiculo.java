@@ -1,4 +1,4 @@
-public abstract class Vehiculo {
+public abstract class Vehiculo implements Calculable {
     private String patente;
     private String marca;
     private int cantRuedas;

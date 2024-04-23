@@ -1,3 +1,4 @@
 public enum ModoCambios {
-    AUTOMATICO, MANUAL;
+    AUTOMATICO, 
+    MANUAL;
 }

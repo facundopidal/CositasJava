@@ -17,11 +17,16 @@ public class Moto extends Vehiculo {
             return false;
         return true;
     }
+    
+    @Override
+    public double calcularPrecio() {
+        setPrecio(7);
+        return getPrecio(); 
+    }
 
     @Override
     public String toString() {
-        return "Moto [cilindrada=" + cilindrada + ", tieneBaul=" + tieneBaul + ", getCilindrada()=" + getCilindrada()
-                + ", isTieneBaul()=" + isTieneBaul() + ", getPatente()=" + getPatente() + ", getMarca()=" + getMarca()
+        return "Moto [cilindrada=" + cilindrada + ", tieneBaul=" + tieneBaul + ", getPatente()=" + getPatente() + ", getMarca()=" + getMarca()
                 + ", getCantRuedas()=" + getCantRuedas() + ", getConsumo()=" + getConsumo() + ", getPrecio()="
                 + getPrecio() + "]";
     }

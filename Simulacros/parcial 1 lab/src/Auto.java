@@ -1,16 +1,20 @@
-public class Auto extends Vehiculo {
+public class Auto extends Vehiculo{
     private String listaPrestaciones;
     private ModoCambios modoPasarCambios;
 
     @Override
     public String toString() {
         return "Auto [listaPrestaciones=" + listaPrestaciones + ", modoPasarCambios=" + modoPasarCambios
-                + ", getListaPrestaciones()=" + getListaPrestaciones() + ", getModoPasarCambios()="
-                + getModoPasarCambios() + ", getPatente()=" + getPatente() + ", getMarca()=" + getMarca()
+                + ", getPatente()=" + getPatente() + ", getMarca()=" + getMarca()
                 + ", getCantRuedas()=" + getCantRuedas() + ", getConsumo()=" + getConsumo() + ", getPrecio()="
                 + getPrecio() + "]";
     }
 
+    @Override
+    public double calcularPrecio() {
+        setPrecio(15);
+        return getPrecio();   
+    }
 
     @Override
     public boolean equals(Object obj) {
