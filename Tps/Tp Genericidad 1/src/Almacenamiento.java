@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Almacenamiento<T> {
     private ArrayList<T> lista = new ArrayList<>();
@@ -9,11 +10,13 @@ public class Almacenamiento<T> {
 
     public ArrayList<T> eliminar(T e){
         ArrayList<T> eliminados = new ArrayList<>();
-        for(T t: lista){
-            if(t.equals(e))
+        Iterator<T> iterator = lista.iterator();
+        while(iterator.hasNext()){
+            if(iterator.next().equals(e)){
                 eliminados.add(e);
+                iterator.remove();
+            }
         }
-        lista.removeIf(t -> eliminados.contains(t));
         return eliminados;
     }
 
@@ -37,11 +40,7 @@ public class Almacenamiento<T> {
         listaString += "]";
         return listaString;
     }
+
     public Almacenamiento() {
     }
-
-    
-
-    
-
 }

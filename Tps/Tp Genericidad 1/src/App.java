@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class App {
     public static void main(String[] args) throws Exception {
         // Almacenamiento<Integer> list = new Almacenamiento<>();
@@ -48,20 +50,32 @@ public class App {
         // System.out.println(pilon.tope());
         // System.out.println(pilon);
 
-        Calculadora<Long> calc = new Calculadora<>();
-        long n1 = 1;
-        long n2 = 5;
-        System.out.println(calc.dividir(n1, n2));
-        System.out.println(calc.restar(n1, n2));
-        System.out.println(calc.sumar(n1, n2));
-        System.out.println(calc.multiplicar(n1, n2));
+        // Calculadora<Long> calc = new Calculadora<>();
+        // long n1 = 1;
+        // long n2 = 5;
+        // System.out.println(calc.dividir(n1, n2));
+        // System.out.println(calc.restar(n1, n2));
+        // System.out.println(calc.sumar(n1, n2));
+        // System.out.println(calc.multiplicar(n1, n2));
 
-        Calculadora<Integer> calcc = new Calculadora<>();
-        int n3 = 2;
-        int n4 = 9;
-        System.out.println(calcc.sumar(n3,n4));
-        System.out.println(calcc.multiplicar(n3,n4));
-        System.out.println(calcc.restar(n3,n4));
-        System.out.println(calcc.dividir(n3,n4));
+        // Calculadora<Integer> calcc = new Calculadora<>();
+        // int n3 = 2;
+        // int n4 = 9;
+        // System.out.println(calcc.sumar(n3,n4));
+        // System.out.println(calcc.multiplicar(n3,n4));
+        // System.out.println(calcc.restar(n3,n4));
+        // System.out.println(calcc.dividir(n3,n4));
+
+        ArrayList<String> lista = new ArrayList<>();
+        lista.add("rafa");
+        lista.add("EIOU");
+        lista.add("EIOU");
+        lista.add("rulo");
+        lista.removeIf(elementoLista-> elementoLista.equals("EIOU"));
+        
+        System.out.println(lista);
+
+        
+        
     }
 }
