@@ -2,7 +2,6 @@ package src.modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
 import src.interfaces.Identificable;
 import src.iu.Menu;
@@ -68,6 +67,6 @@ public abstract class Producto implements Identificable{
 
     @Override
     public String toString() {
-        return '{' + "Titulo: " + getTitulo() + "Autor: " + getAutor() + "ID: " + getId() + '}';
+        return "{ " + "Titulo: " + getTitulo() + ", Autor: " + getAutor() + ", ID: " + getId() + " }";
     }
 }

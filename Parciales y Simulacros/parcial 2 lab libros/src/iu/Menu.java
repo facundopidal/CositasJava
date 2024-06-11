@@ -63,7 +63,7 @@ public abstract class Menu {
             switch (op) {
                 case 1:
                     System.out.println("Ingrese un producto:");
-                    e = escanear(e);
+                    e = escanear(e);//cosa fea 
                     try{
                         biblio.agregar(e);
                         System.out.println("Se agrego correctamente");
