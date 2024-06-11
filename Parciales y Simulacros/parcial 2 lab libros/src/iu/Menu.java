@@ -44,6 +44,7 @@ public abstract class Menu {
         while(op != 0);
     }
 
+    @SuppressWarnings("unchecked")
     public static <T extends Identificable> void menuSecundario(T e){
         int op;
         Biblioteca<T> biblio = new Biblioteca<>();
@@ -62,8 +63,20 @@ public abstract class Menu {
 
             switch (op) {
                 case 1:
-                    System.out.println("Ingrese un producto:");
-                    e = escanear(e);//cosa fea 
+                    System.out.println("Ingrese un producto");
+                    if(e instanceof Novela){
+                        Novela n = new Novela();
+                        n.escanear();
+                        e = (T) n;
+                    }
+                    else if(e instanceof Libro){
+                        Libro l = new Libro();
+                        l.escanear();
+                        e = (T) l;
+                    }
+                    else{
+                        throw new RuntimeException();
+                    } 
                     try{
                         biblio.agregar(e);
                         System.out.println("Se agrego correctamente");
@@ -72,11 +85,23 @@ public abstract class Menu {
                     }
                     break;
                 case 2:
-                    System.out.println("Ingrese un producto:");
-                    e = escanear(e);
+                    System.out.println("Ingrese un producto");
+                    if(e instanceof Novela){
+                        Novela n = new Novela();
+                        n.escanear();
+                        e = (T) n;
+                    }
+                    else if(e instanceof Libro){
+                        Libro l = new Libro();
+                        l.escanear();
+                        e = (T) l;
+                    }
+                    else{
+                        throw new RuntimeException();
+                    } 
                     try{
                         T eliminado = biblio.eliminar(e);
-                        System.out.println("Se elimino correctamente" + eliminado);
+                        System.out.println("Se elimino correctamente: " + eliminado);
                     } catch (IdNotFoundException ex) {
                         System.out.println(ex.getMessage());
                     }
@@ -119,21 +144,4 @@ public abstract class Menu {
 
     }
 
-    private static <T extends Identificable> T escanear(T e){
-        
-        if(e instanceof Novela){
-            Novela n = new Novela();
-            n.escanear();
-            return (T) n;
-        }
-        else if(e instanceof Libro){
-            Libro l = new Libro();
-            l.escanear();
-            return (T) l;
-        }
-        else{
-            throw new RuntimeException();
-        }
-
-    }
 }
